@@ -989,6 +989,23 @@ Sila sahkan ketersediaan meja kami. Terima kasih!`;
             });
         }
 
+        const closeHalalBtn = document.getElementById('halal-modal-close');
+        if (closeHalalBtn) closeHalalBtn.addEventListener('click', () => this.closeHalalModal());
+
+        const halalOverlay = document.getElementById('halal-modal-overlay');
+        if (halalOverlay) {
+            halalOverlay.addEventListener('click', (e) => {
+                if (e.target === halalOverlay) this.closeHalalModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeReservationModal();
+                this.closeHalalModal();
+            }
+        });
+
         // Reservation Zones
         document.querySelectorAll('.zone-choice-card').forEach(card => {
             card.addEventListener('click', () => {
