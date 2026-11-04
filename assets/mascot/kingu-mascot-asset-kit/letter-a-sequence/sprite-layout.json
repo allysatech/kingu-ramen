@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "design": "Compact daruma silhouette: broad domed crown, slightly narrower upper body, fuller middle/lower sides, rounded lower corners and shallow curved base. One continuous body, no neck, collar, legs or feet. Not a perfect circle or tall capsule.",
+  "frame": {
+    "width": 1017,
+    "height": 1078
+  },
+  "visibleBounds": {
+    "left": 16,
+    "top": 16,
+    "width": 985,
+    "height": 1046
+  },
+  "mouthPatch": {
+    "left": 316,
+    "top": 495,
+    "width": 380,
+    "height": 145
+  },
+  "poses": {
+    "neutral": "mascot-neutral.png",
+    "open": "mascot-open.png",
+    "chew": "mascot-chew.png"
+  },
+  "titleIntegration": "Preserve the existing live A glyph and all per-letter hover. Do not use a raster title replacement.",
+  "targetSizing": {
+    "source": "Measure the live A slot after fonts load and remeasure on resize/layout changes.",
+    "formula": "scale = min(slotWidth * 0.90 / 985, slotHeight * 0.94 / 1046)",
+    "frame": "Scale the complete frame uniformly, account for its 16px margins and align the visible base to the glyph baseline/bottom."
+  },
+  "fixedPageCoordinates": false,
+  "expressionInvariant": "All pixels outside mouthPatch are identical across the three supplied full-body poses."
+}

@@ -48,12 +48,12 @@ const KINGU_TRANSLATIONS = {
         // Full Menu
         menu_eyebrow: "Senarai Penuh & Telus",
         menu_title: "Menu Kingu Ramen",
-        menu_desc: "Semua 22 item hidangan berharga rasmi dari Google Listing. Terokai katalog menu lengkap, ramuan, tahap kepedasan dan harga.",
-        menu_tab_all: "Semua (22)",
-        menu_tab_ramen: "Ramen (7)",
-        menu_tab_snacks: "Snek & Gyoza (10)",
-        menu_tab_rice: "Hidangan Nasi (2)",
-        menu_tab_drinks: "Teh Buah & Minuman (7)",
+        menu_desc: "Semua {count} item hidangan berharga rasmi dari Google Listing. Terokai katalog menu lengkap, ramuan, tahap kepedasan dan harga.",
+        menu_tab_all: "Semua ({count})",
+        menu_tab_ramen: "Ramen ({count})",
+        menu_tab_snacks: "Snek & Gyoza ({count})",
+        menu_tab_rice: "Hidangan Nasi ({count})",
+        menu_tab_drinks: "Teh Buah & Minuman ({count})",
         menu_search_placeholder: "Cari hidangan (cth: Gyoza, Yuzu, Truffle)...",
         menu_badge_spicy: "Pedas",
         menu_badge_mild: "Sederhana",
@@ -95,14 +95,10 @@ const KINGU_TRANSLATIONS = {
         exp_eyebrow: "Ruang & Pengalaman",
         exp_title: "Suasana Izakaya Ampang",
         exp_desc: "Nikmati mangkuk ramen panas anda di kaunter terbuka bersama chef, ruang makan selesa dalaman atau bersantai di bawah bintang di ruang legar luar The Campus Ampang.",
-        gallery_1_title: "Bar Kaunter Chef & Trio Ramen",
-        gallery_1_desc: "Suasana izakaya autentik di The Campus Ampang",
-        gallery_2_title: "Torched Salmon Mentai",
-        gallery_2_desc: "Disalai segar dengan sos mentaiko berkrim & halia jeruk",
-        gallery_3_title: "Crispy Tori Karaage & Spicy Glaze",
-        gallery_3_desc: "Ayam goreng rangup bersalut sos istimewa bersama salad segar",
-        gallery_4_title: "Storefront & Papan Tanda Bercahaya",
-        gallery_4_desc: "The Campus Ampang, Lot G-07 (Ground Floor)",
+        gallery_4_title: "Kaunter Retro & Storefront Kingu",
+        gallery_4_desc: "Lot G-07, Ground Floor, The Campus Ampang",
+        gallery_5_title: "Ramen First, Think Later.",
+        gallery_5_desc: "Ramen panas & teh buah segar di bawah neon kami",
 
         // Reviews
         reviews_eyebrow: "Kepuasan Pelanggan",
@@ -285,12 +281,12 @@ const KINGU_TRANSLATIONS = {
         // Full Menu
         menu_eyebrow: "Complete & Transparent",
         menu_title: "Kingu Ramen Menu",
-        menu_desc: "All 22 official dishes with transparent pricing from our Google Listing. Explore our complete catalog, ingredients, spice levels and prices.",
-        menu_tab_all: "All (22)",
-        menu_tab_ramen: "Ramen (7)",
-        menu_tab_snacks: "Snacks & Gyoza (10)",
-        menu_tab_rice: "Rice Dishes (2)",
-        menu_tab_drinks: "Fruit Tea & Drinks (7)",
+        menu_desc: "All {count} official dishes with transparent pricing from our Google Listing. Explore our complete catalog, ingredients, spice levels and prices.",
+        menu_tab_all: "All ({count})",
+        menu_tab_ramen: "Ramen ({count})",
+        menu_tab_snacks: "Snacks & Gyoza ({count})",
+        menu_tab_rice: "Rice Dishes ({count})",
+        menu_tab_drinks: "Fruit Tea & Drinks ({count})",
         menu_search_placeholder: "Search dishes (e.g. Gyoza, Yuzu, Truffle)...",
         menu_badge_spicy: "Spicy",
         menu_badge_mild: "Mild",
@@ -332,14 +328,10 @@ const KINGU_TRANSLATIONS = {
         exp_eyebrow: "Spaces & Experience",
         exp_title: "Ampang Izakaya Ambiance",
         exp_desc: "Enjoy your piping-hot ramen at the open chef counter, cozy indoor dining, or unwind under the stars in the outdoor seating area at The Campus Ampang.",
-        gallery_1_title: "Chef Counter Bar & Ramen Trio",
-        gallery_1_desc: "Authentic izakaya atmosphere at The Campus Ampang",
-        gallery_2_title: "Torched Salmon Mentai",
-        gallery_2_desc: "Flame-seared with creamy mentaiko sauce & pickled ginger",
-        gallery_3_title: "Crispy Tori Karaage & Spicy Glaze",
-        gallery_3_desc: "Crispy fried chicken tossed in specialty glaze with fresh slaw",
-        gallery_4_title: "Storefront & Illuminated Signage",
-        gallery_4_desc: "The Campus Ampang, Lot G-07 (Ground Floor)",
+        gallery_4_title: "Retro Counter & Kingu Storefront",
+        gallery_4_desc: "Lot G-07, Ground Floor, The Campus Ampang",
+        gallery_5_title: "Ramen First, Think Later.",
+        gallery_5_desc: "Hot ramen & fresh fruit tea under our neon glow",
 
         // Reviews
         reviews_eyebrow: "Guest Satisfaction",
@@ -477,7 +469,7 @@ const KINGU_TRANSLATIONS = {
     }
 };
 
-// Bilingual English Menu Attributes (All 22 Items matching app.js MENU_DATA)
+// Bilingual English Menu Attributes (all items matching app.js MENU_DATA)
 const MENU_EN_DATA = {
     // RAMEN
     yummy_truffle: {

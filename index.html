@@ -49,16 +49,10 @@
     <!-- Google Fonts Luxury Display Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css?v=luxury-3.0">
-
-    <!-- Three.js (WebGL 3D Engine via CDN) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <link rel="stylesheet" href="styles.css?v=mascot-7.7">
 
 </head>
 <body>
@@ -111,6 +105,10 @@
                 <li><a href="#full-menu" class="nav-link" data-i18n="nav_menu">Menu</a></li>
                 <li><a href="#vip-club" class="nav-link" data-i18n="nav_vip">VIP</a></li>
                 <li><a href="#location" class="nav-link" data-i18n="nav_contact">Hubungi Kami</a></li>
+                <!-- Table Reservation (opens modal) -->
+                <li class="nav-reserve-item">
+                    <a href="#reservation" class="nav-link nav-link-reserve" id="btn-reserve-nav" role="button" data-i18n="nav_reserve">Tempah Meja</a>
+                </li>
             </ul>
 
             <div class="nav-actions">
@@ -126,11 +124,6 @@
                     <span></span>
                     <span></span>
                 </button>
-
-                <!-- Table Reservation Button -->
-                <button class="btn-reserve-nav" id="btn-reserve-nav" onclick="window.kinguApp.openReservationModal()">
-                    <span data-i18n="nav_reserve">Tempah Meja</span>
-                </button>
             </div>
         </nav>
     </header>
@@ -140,20 +133,19 @@
        ========================================================================== -->
     <section class="hero-section" id="hero">
         <div class="hero-wrapper">
-            <!-- Left: Typography & Story -->
+            <!-- Typography & Story -->
             <div class="hero-content">
-                <!-- Live Status Beacon -->
-                <div class="hero-status-pill">
-                    <span class="beacon-dot"></span>
-                    <span data-i18n="hero_status">BUKA HARI INI • 11:30 AM - 10:00 PM • THE CAMPUS AMPANG</span>
-                </div>
-
                 <div class="hero-jp-sub">キングラーメン • 一期一会</div>
                 <p class="hero-eyebrow" data-i18n="hero_eyebrow">A new ramen experience by Kingu Kongu</p>
 
-                <h1 class="hero-title">
-                    <span class="hero-title-line" data-i18n="hero_title_1">No Ramen</span>
-                    <span class="hero-title-line highlight-red" data-i18n="hero_title_2">No Life</span>
+                <!-- Chunky wordmark title -->
+                <h1 class="hero-wordmark" aria-label="Kingu Ramen">
+                    <span class="wordmark-line" aria-hidden="true">
+                        <span class="wm-l">K</span><span class="wm-l">I</span><span class="wm-l">N</span><span class="wm-l">G</span><span class="wm-l">U</span>
+                    </span>
+                    <span class="wordmark-line" aria-hidden="true">
+                        <span class="wm-l">R</span><span class="wm-l">A</span><span class="wm-l">M</span><span class="wm-l">E</span><span class="wm-l">N</span><sup class="wm-tm">™</sup>
+                    </span>
                 </h1>
 
                 <p class="hero-desc" data-i18n="hero_desc">
@@ -161,7 +153,7 @@
                 </p>
 
                 <div class="hero-cta-group">
-                    <a href="#full-menu" class="btn-primary">
+                    <a href="#full-menu" class="btn-primary" id="hero-view-menu-btn">
                         <span data-i18n="hero_cta_menu">View The Menu</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -169,56 +161,13 @@
                         <span data-i18n="hero_cta_directions">Get Directions</span>
                     </a>
                 </div>
-
-                <!-- Hero Metrics Strip -->
-                <div class="hero-metrics">
-                    <div class="metric-item">
-                        <span class="metric-num">RM 25 - 30</span>
-                        <span class="metric-label" data-i18n="hero_metric_price">Harga Mangkuk Utama</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-num" data-i18n="hero_simmer_val">12 Jam</span>
-                        <span class="metric-label" data-i18n="hero_metric_simmer">Rendihan Sup Kolagen</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-num">4.7 ★</span>
-                        <span class="metric-label" data-i18n="hero_metric_reviews">Ulasan Pelanggan Google</span>
-                    </div>
-                </div>
             </div>
 
-            <!-- Right: interactive 3D GLB ramen bowl -->
-            <div class="hero-3d-stage">
-                <div class="stage-glow-disc"></div>
-                <canvas id="ramen-canvas" aria-label="Putar mangkuk ramen 360 darjah"></canvas>
-
-                <!-- 3D Camera & Scene Controls Toolbar -->
-                <div class="stage-camera-toolbar" id="stage-camera-toolbar">
-                    <button class="cam-tool-btn active" data-cam="hero" onclick="window.kinguApp.setCameraAngle('hero', this)">
-                        <span data-i18n="hero_cam_hero">45° Hero</span>
-                    </button>
-                    <button class="cam-tool-btn" data-cam="topdown" onclick="window.kinguApp.setCameraAngle('topdown', this)">
-                        <span data-i18n="hero_cam_topdown">Top-Down</span>
-                    </button>
-                    <button class="cam-tool-btn" data-cam="closeup" onclick="window.kinguApp.setCameraAngle('closeup', this)">
-                        <span data-i18n="hero_cam_zoom">Zoom In</span>
-                    </button>
-                    <button class="cam-tool-btn active" id="btn-toggle-steam" onclick="window.kinguApp.toggleSteam(this)" title="Hidup / Matikan Stim Broth">
-                        <span data-i18n="hero_cam_steam">Stim Broth</span>
-                    </button>
-                    <button class="cam-tool-btn active" id="btn-toggle-spin" onclick="window.kinguApp.toggleAutoSpin(this)" title="Putaran Automatik">
-                        <span data-i18n="hero_cam_spin">Putaran Auto</span>
-                    </button>
-                </div>
-
-                <div class="hotspot-badge" style="top: 18%; right: 6%;" onclick="window.kinguApp.openDishModal('mala_beef')">
-                    <span class="hotspot-dot"></span>
-                    <span data-i18n="hero_hotspot">Braised Beef & Onsen Tamago</span>
-                </div>
-
-                <div class="interactive-hint">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    <span data-i18n="hero_hint">Seret untuk pusing 360° atau pilih sudut kamera di bawah</span>
+            <!-- Kingu Mascot Hero Illustration Stage -->
+            <div class="hero-mascot-stage" id="hero-mascot-stage" aria-label="Kingu Ramen Mascot">
+                <div class="mascot-stage-glow" aria-hidden="true"></div>
+                <div class="mascot-entrance-clip" id="mascot-entrance-clip">
+                    <div class="mascot-rig-viewport" id="kingu-mascot-rig"></div>
                 </div>
             </div>
         </div>
@@ -267,7 +216,7 @@
 
             <div class="signature-grid">
                 <!-- 1. Yummy Truffle Ramen -->
-                <div class="ramen-card">
+                <div class="ramen-card is-clickable" role="button" tabindex="0" onclick="window.kinguApp.openDishModal('yummy_truffle')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('yummy_truffle');}">
                     <div class="ramen-img-wrap">
                         <img src="assets/images/kingu_shoyu_truffle_real.jpg" alt="Yummy Truffle Ramen" class="ramen-img">
                         <span class="ramen-tag-floating" data-i18n="bestseller_1_tag">Best Seller #1</span>
@@ -287,17 +236,11 @@
                             <span class="ing-pill" data-i18n="tag_shiitake">Cendawan Shiitake</span>
                             <span class="ing-pill" data-i18n="tag_onsen_egg">Onsen Tamago</span>
                         </div>
-                        <div class="ramen-card-actions">
-                            <button class="btn-card-view" onclick="window.kinguApp.openDishModal('yummy_truffle')">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                                <span data-i18n="btn_view_details">Lihat Perincian & Ramuan</span>
-                            </button>
-                        </div>
                     </div>
                 </div>
 
                 <!-- 2. Yuzu Lover Ramen -->
-                <div class="ramen-card">
+                <div class="ramen-card is-clickable" role="button" tabindex="0" onclick="window.kinguApp.openDishModal('yuzu_lover')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('yuzu_lover');}">
                     <div class="ramen-img-wrap">
                         <img src="assets/images/kingu_yuzu_lover_real.jpg" alt="Yuzu Lover Ramen" class="ramen-img">
                         <span class="ramen-tag-floating" data-i18n="bestseller_2_tag">Citrus Refreshing</span>
@@ -317,17 +260,11 @@
                             <span class="ing-pill" data-i18n="tag_tamago">Ajitsuke Tamago</span>
                             <span class="ing-pill" data-i18n="tag_greens">Sayur Hijau Segar</span>
                         </div>
-                        <div class="ramen-card-actions">
-                            <button class="btn-card-view" onclick="window.kinguApp.openDishModal('yuzu_lover')">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                                <span data-i18n="btn_view_details">Lihat Perincian & Ramuan</span>
-                            </button>
-                        </div>
                     </div>
                 </div>
 
                 <!-- 3. Mala Beef Ramen -->
-                <div class="ramen-card">
+                <div class="ramen-card is-clickable" role="button" tabindex="0" onclick="window.kinguApp.openDishModal('mala_beef')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('mala_beef');}">
                     <div class="ramen-img-wrap">
                         <img src="assets/images/mala_beef_ramen.jpg?v=real-mala-beef" alt="Mala Beef Ramen" class="ramen-img">
                         <span class="ramen-tag-floating" data-i18n="bestseller_3_tag">Fiery Szechuan</span>
@@ -347,12 +284,6 @@
                             <span class="ing-pill" data-i18n="tag_bok_choy">Bok Choy</span>
                             <span class="ing-pill" data-i18n="tag_ramen_egg">Telur Ramen</span>
                         </div>
-                        <div class="ramen-card-actions">
-                            <button class="btn-card-view" onclick="window.kinguApp.openDishModal('mala_beef')">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                                <span data-i18n="btn_view_details">Lihat Perincian & Ramuan</span>
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -369,13 +300,13 @@
                 <span class="section-eyebrow" data-i18n="menu_eyebrow">Senarai Penuh & Telus</span>
                 <h2 class="section-title" data-i18n="menu_title">Menu Kingu Ramen</h2>
                 <p class="section-desc" data-i18n="menu_desc">
-                    Semua 22 item hidangan berharga rasmi dari Google Listing. Terokai katalog menu lengkap, ramuan, tahap kepedasan dan harga.
+                    Semua 26 item hidangan berharga rasmi dari Google Listing. Terokai katalog menu lengkap, ramuan, tahap kepedasan dan harga.
                 </p>
             </div>
 
             <div class="menu-controls">
                 <div class="menu-category-tabs">
-                    <button class="menu-tab active" data-category="all" data-i18n="menu_tab_all">Semua (22)</button>
+                    <button class="menu-tab active" data-category="all" data-i18n="menu_tab_all">Semua (26)</button>
                     <button class="menu-tab" data-category="ramen" data-i18n="menu_tab_ramen">Ramen (7)</button>
                     <button class="menu-tab" data-category="snacks" data-i18n="menu_tab_snacks">Snek & Gyoza (10)</button>
                     <button class="menu-tab" data-category="rice" data-i18n="menu_tab_rice">Hidangan Nasi (2)</button>
@@ -495,7 +426,7 @@
                         </p>
                     </div>
                     <div class="story-logo-badge-wrap">
-                        <img src="assets/images/kingu_logo_mascot.jpg" alt="Logo Maskot Kingu Ramen" class="story-round-logo">
+                        <img src="assets/mascot/kingu-mascot-asset-kit/reference/assembled-reference.png" alt="Maskot Rasmi Kingu Ramen" class="story-round-logo">
                         <span class="story-logo-caption" data-i18n="story_logo_caption">Maskot Rasmi Kingu Ramen</span>
                     </div>
                 </div>
@@ -522,28 +453,20 @@
                 </p>
             </div>
 
-            <div class="gallery-mosaic">
+            <div class="gallery-mosaic gallery-duo">
                 <div class="gallery-tile">
-                    <img src="assets/images/kingu_ramen_counter_trio.jpg" alt="Barisan Ramen Signature di Kaunter Izakaya">
+                    <img src="assets/images/kingu_space_storefront.jpg" alt="Kaunter retro dan storefront Kingu Ramen di The Campus Ampang" loading="lazy">
                     <div class="gallery-overlay-badge">
-                        <h4 data-i18n="gallery_1_title">Bar Kaunter Chef & Trio Ramen</h4>
-                        <p data-i18n="gallery_1_desc">Suasana izakaya autentik di The Campus Ampang</p>
+                        <h4 data-i18n="gallery_4_title">Kaunter Retro &amp; Storefront Kingu</h4>
+                        <p data-i18n="gallery_4_desc">Lot G-07, Ground Floor, The Campus Ampang</p>
                     </div>
                 </div>
 
                 <div class="gallery-tile">
-                    <img src="assets/images/kingu_salmon_mentai_real.jpg" alt="Torched Salmon Mentai Nigiri">
+                    <img src="assets/images/kingu_neon_ramen.jpg" alt="Papan neon Ramen first, think later dengan semangkuk ramen dan teh buah" loading="lazy">
                     <div class="gallery-overlay-badge">
-                        <h4 data-i18n="gallery_2_title">Torched Salmon Mentai</h4>
-                        <p data-i18n="gallery_2_desc">Disalai segar dengan sos mentaiko berkrim & halia jeruk</p>
-                    </div>
-                </div>
-
-                <div class="gallery-tile">
-                    <img src="assets/images/kingu_karaage_chicken_real.jpg" alt="Crispy Spicy Tori Karaage">
-                    <div class="gallery-overlay-badge">
-                        <h4 data-i18n="gallery_3_title">Crispy Tori Karaage & Spicy Glaze</h4>
-                        <p data-i18n="gallery_3_desc">Ayam goreng rangup bersalut sos istimewa bersama salad segar</p>
+                        <h4 data-i18n="gallery_5_title">Ramen First, Think Later.</h4>
+                        <p data-i18n="gallery_5_desc">Ramen panas &amp; teh buah segar di bawah neon kami</p>
                     </div>
                 </div>
             </div>
@@ -561,14 +484,6 @@
                 <p class="section-desc" data-i18n="reviews_desc">
                     Dinilai 4.7 daripada 5.0 bintang oleh lebih 86 penggemar ramen di Google Reviews.
                 </p>
-            </div>
-
-            <!-- Review Filter Pills -->
-            <div class="review-filter-tabs">
-                <button class="review-filter-pill active" onclick="window.kinguApp.filterReviews('all', this)" data-i18n="review_filter_all">Semua Ulasan (86+)</button>
-                <button class="review-filter-pill" onclick="window.kinguApp.filterReviews('truffle', this)" data-i18n="review_filter_truffle">Truffle & Broth</button>
-                <button class="review-filter-pill" onclick="window.kinguApp.filterReviews('halal', this)" data-i18n="review_filter_halal">100% Halal</button>
-                <button class="review-filter-pill" onclick="window.kinguApp.filterReviews('vibe', this)" data-i18n="review_filter_vibe">Suasana & Outdoor</button>
             </div>
 
             <div class="reviews-grid" id="reviews-grid">
@@ -726,12 +641,8 @@
                     </div>
 
                     <div class="nav-buttons-cluster">
-                        <a href="https://waze.com/ul?q=The%20Campus%20Ampang" target="_blank" class="btn-nav-action btn-waze">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-                            <span data-i18n="loc_waze">Buka di Waze</span>
-                        </a>
                         <a href="https://maps.google.com/?q=The+Campus+Ampang" target="_blank" class="btn-nav-action btn-gmaps">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                            <img src="assets/images/google-maps-pin.png" alt="Google Maps" class="gmaps-pin-icon" />
                             <span data-i18n="loc_gmaps">Google Maps</span>
                         </a>
                     </div>
@@ -981,8 +892,9 @@
     <div class="toast-container" id="toast-container"></div>
 
     <!-- Scripts -->
-    <script src="three_scene.js?v=polar-fix-v5"></script>
-    <script src="translations.js"></script>
-    <script src="app.js"></script>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="translations.js?v=mascot-7.2"></script>
+    <script src="app.js?v=mascot-7.2"></script>
+    <script src="mascot-hero.js?v=mascot-7.2"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "vercel-build": "echo static"
   },
   "dependencies": {
     "jpeg-js": "^0.4.4",

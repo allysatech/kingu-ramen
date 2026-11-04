@@ -377,6 +377,9 @@ class KinguApp {
             }
         });
 
+        // Fill real dish counts into menu tabs & description ("{count}" in translations)
+        this.updateMenuCounts(dict);
+
         // Update all inputs with data-i18n-placeholder
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
             const key = el.getAttribute('data-i18n-placeholder');
@@ -405,6 +408,22 @@ class KinguApp {
         this.updateLiveCrowdStatus();
     }
 
+    /* Menu counts are always computed from MENU_DATA so they never go stale */
+    updateMenuCounts(dict) {
+        const counts = MENU_DATA.reduce((acc, item) => {
+            acc[item.category] = (acc[item.category] || 0) + 1;
+            return acc;
+        }, { all: MENU_DATA.length });
+
+        document.querySelectorAll('.menu-tab[data-category]').forEach(tab => {
+            const template = dict[tab.getAttribute('data-i18n')];
+            if (template) tab.innerText = template.replace('{count}', counts[tab.dataset.category] || 0);
+        });
+
+        const desc = document.querySelector('[data-i18n="menu_desc"]');
+        if (desc && dict.menu_desc) desc.innerText = dict.menu_desc.replace('{count}', counts.all);
+    }
+
     /* Scroll Reading Progress Bar */
     initScrollProgressBar() {
         const bar = document.getElementById('scroll-progress-bar');
@@ -420,9 +439,46 @@ class KinguApp {
     initScrollChrome() {
         const header = document.querySelector('.site-header');
         if (!header) return;
-        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+
+        let lastScrollY = window.scrollY;
+        const closeMobileDropdown = () => {
+            const toggle = document.getElementById('nav-toggle');
+            const links = document.getElementById('nav-links');
+            if (links && links.classList.contains('is-open')) {
+                links.classList.remove('is-open');
+                if (toggle) {
+                    toggle.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        };
+
+        const onScroll = () => {
+            const currentY = Math.max(0, window.scrollY);
+            const deltaY = currentY - lastScrollY;
+
+            header.classList.toggle('is-scrolled', currentY > 24);
+
+            if (currentY <= 40) {
+                header.classList.remove('is-nav-hidden');
+            } else if (deltaY > 4) {
+                header.classList.add('is-nav-hidden');
+                closeMobileDropdown();
+            } else if (deltaY < -6) {
+                header.classList.remove('is-nav-hidden');
+            }
+
+            lastScrollY = currentY;
+        };
+
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('wheel', (e) => {
+            if (window.scrollY > 40 && e.deltaY > 4) {
+                header.classList.add('is-nav-hidden');
+                closeMobileDropdown();
+            }
+        }, { passive: true });
     }
 
     initRevealOnScroll() {
@@ -460,9 +516,20 @@ class KinguApp {
             toggle.setAttribute('aria-expanded', String(open));
         });
 
-        links.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+        links.querySelectorAll('a, button').forEach((link) => link.addEventListener('click', close));
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) close();
+            // Must match the hamburger breakpoint in styles.css (max-width: 1080px)
+            if (window.innerWidth > 1080) close();
+        });
+
+        // Close the dropdown when tapping outside it or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (!links.classList.contains('is-open')) return;
+            if (links.contains(e.target) || toggle.contains(e.target)) return;
+            close();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') close();
         });
     }
 
@@ -549,7 +616,6 @@ class KinguApp {
             return;
         }
 
-        const btnLabel = isEn ? 'View Details & Ingredients' : 'Lihat Perincian & Ramuan';
         const spicyLabel = isEn ? 'Spicy: Level' : 'Pedas: Tahap';
 
         const catLabels = {
@@ -564,8 +630,11 @@ class KinguApp {
                 ? catLabels[this.currentLang][item.category].toUpperCase()
                 : item.category.toUpperCase();
 
+            // Whole card opens the dish details modal (no separate "View details" button)
             return `
-            <div class="menu-item-row-card">
+            <div class="menu-item-row-card is-clickable" role="button" tabindex="0"
+                 onclick="window.kinguApp.openDishModal('${item.id}')"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('${item.id}');}">
                 <div>
                     <div class="item-top-row">
                         <h4 class="item-name">${item.name}</h4>
@@ -577,12 +646,6 @@ class KinguApp {
                         ${item.spiceLevel ? ` • ${spicyLabel} ${item.spiceLevel}/3` : ''}
                     </div>
                     <p class="item-desc-text">${desc}</p>
-                </div>
-                <div style="margin-top: 14px;">
-                    <button class="btn-item-view" onclick="window.kinguApp.openDishModal('${item.id}')">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>${btnLabel}</span>
-                    </button>
                 </div>
             </div>
             `;
@@ -945,7 +1008,10 @@ Sila sahkan ketersediaan meja kami. Terima kasih!`;
 
         // Reservation Modal
         const reserveNavBtn = document.getElementById('btn-reserve-nav');
-        if (reserveNavBtn) reserveNavBtn.addEventListener('click', () => this.openReservationModal());
+        if (reserveNavBtn) reserveNavBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // it's an <a href="#reservation"> inside the nav menu
+            this.openReservationModal();
+        });
 
         const closeResBtn = document.getElementById('reservation-modal-close');
         if (closeResBtn) closeResBtn.addEventListener('click', () => this.closeReservationModal());
@@ -1045,6 +1111,10 @@ Sila sahkan ketersediaan meja kami. Terima kasih!`;
         window.addEventListener('keydown', (e) => {
             const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
             if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') return;
+            // Slide-by-slide jumps only in desktop slide mode; on phone/tablet the
+            // page scrolls naturally (see "Natural-flow mode" in styles.css).
+            const isSlideMode = getComputedStyle(document.documentElement).scrollSnapType !== 'none';
+            if (!isSlideMode) return;
 
             if (e.key === 'ArrowDown' || e.key === 'PageDown') {
                 const viewportCenter = window.scrollY + window.innerHeight / 2;

@@ -1,0 +1,233 @@
+{
+  "name": "Kingu mascot animation asset kit",
+  "version": 6,
+  "format": "PNG RGBA",
+  "sourceAtlas": "reference/mascot-sprite-atlas.png",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "leftRightConvention": "Left and right always mean screen/viewer left and right, not mascot anatomical sides.",
+  "status": "Separate raster cutouts. Artwork asset kit; not a completed animation or a pre-rigged character.",
+  "parts": [
+    {
+      "name": "head-base",
+      "file": "parts/head-base.png",
+      "atlasCrop": {
+        "left": 28,
+        "top": 49,
+        "width": 284,
+        "height": 257
+      },
+      "width": 284,
+      "height": 257,
+      "alphaPixels": 52887
+    },
+    {
+      "name": "body",
+      "file": "parts/body.png",
+      "width": 1003,
+      "height": 1058,
+      "atlasPlacement": {
+        "left": 347,
+        "top": 47,
+        "width": 246,
+        "height": 260
+      }
+    },
+    {
+      "name": "arm-left-rest",
+      "file": "parts/arm-left-rest.png",
+      "atlasCrop": {
+        "left": 689,
+        "top": 52,
+        "width": 176,
+        "height": 256
+      },
+      "width": 176,
+      "height": 256,
+      "alphaPixels": 26502
+    },
+    {
+      "name": "arm-right-rest",
+      "file": "parts/arm-right-rest.png",
+      "atlasCrop": {
+        "left": 1012,
+        "top": 52,
+        "width": 172,
+        "height": 258
+      },
+      "width": 172,
+      "height": 258,
+      "alphaPixels": 26476
+    },
+    {
+      "name": "arm-right-wave",
+      "file": "parts/arm-right-wave.png",
+      "atlasCrop": {
+        "left": 664,
+        "top": 360,
+        "width": 250,
+        "height": 246
+      },
+      "width": 250,
+      "height": 246,
+      "alphaPixels": 33650
+    },
+    {
+      "name": "arm-left-wave",
+      "file": "parts/arm-left-wave.png",
+      "atlasCrop": {
+        "left": 966,
+        "top": 359,
+        "width": 246,
+        "height": 244
+      },
+      "width": 246,
+      "height": 244,
+      "alphaPixels": 33697
+    },
+    {
+      "name": "eye-left-open",
+      "file": "parts/eye-left-open.png",
+      "atlasCrop": {
+        "left": 38,
+        "top": 701,
+        "width": 230,
+        "height": 166
+      },
+      "width": 230,
+      "height": 166,
+      "alphaPixels": 28691
+    },
+    {
+      "name": "eye-right-open",
+      "file": "parts/eye-right-open.png",
+      "atlasCrop": {
+        "left": 350,
+        "top": 702,
+        "width": 233,
+        "height": 165
+      },
+      "width": 233,
+      "height": 165,
+      "alphaPixels": 28758
+    },
+    {
+      "name": "iris-left",
+      "file": "parts/iris-left.png",
+      "atlasCrop": {
+        "left": 706,
+        "top": 705,
+        "width": 155,
+        "height": 155
+      },
+      "width": 155,
+      "height": 155,
+      "alphaPixels": 16508
+    },
+    {
+      "name": "iris-right",
+      "file": "parts/iris-right.png",
+      "atlasCrop": {
+        "left": 1021,
+        "top": 705,
+        "width": 153,
+        "height": 153
+      },
+      "width": 153,
+      "height": 153,
+      "alphaPixels": 16111
+    },
+    {
+      "name": "eye-left-closed",
+      "file": "parts/eye-left-closed.png",
+      "atlasCrop": {
+        "left": 40,
+        "top": 1021,
+        "width": 228,
+        "height": 163
+      },
+      "width": 228,
+      "height": 163,
+      "alphaPixels": 27985
+    },
+    {
+      "name": "eye-right-closed",
+      "file": "parts/eye-right-closed.png",
+      "atlasCrop": {
+        "left": 351,
+        "top": 1021,
+        "width": 230,
+        "height": 164
+      },
+      "width": 230,
+      "height": 164,
+      "alphaPixels": 28335
+    },
+    {
+      "name": "ground-shadow",
+      "file": "parts/ground-shadow.png",
+      "atlasCrop": {
+        "left": 648,
+        "top": 1056,
+        "width": 262,
+        "height": 76
+      },
+      "width": 262,
+      "height": 76,
+      "alphaPixels": 13471
+    },
+    {
+      "name": "assembled-reference",
+      "file": "reference/assembled-reference.png",
+      "width": 1017,
+      "height": 1078,
+      "atlasPlacement": {
+        "left": 970,
+        "top": 962,
+        "width": 255,
+        "height": 270
+      }
+    }
+  ],
+  "characterDesign": "Compact daruma silhouette: broad domed crown, slightly narrower upper body, fuller middle/lower sides, rounded lower corners and shallow curved base. One continuous body, no neck, collar, legs or feet. Not a perfect circle or tall capsule.",
+  "introLocomotion": "Roll to the existing interactive A, eat it, replace its visual in the reserved slot. No hopping or waving.",
+  "currentSequenceAssets": "letter-a-sequence/",
+  "titlePolicy": "Preserve the existing live per-letter hover. No static wordmark replacement.",
+  "compactPoses": {
+    "version": 3,
+    "design": "Compact daruma silhouette: broad domed crown, slightly narrower upper body, fuller middle/lower sides, rounded lower corners and shallow curved base. One continuous body, no neck, collar, legs or feet. Not a perfect circle or tall capsule.",
+    "frame": {
+      "width": 1017,
+      "height": 1078
+    },
+    "visibleBounds": {
+      "left": 16,
+      "top": 16,
+      "width": 985,
+      "height": 1046
+    },
+    "mouthPatch": {
+      "left": 316,
+      "top": 495,
+      "width": 380,
+      "height": 145
+    },
+    "poses": {
+      "neutral": "mascot-neutral.png",
+      "open": "mascot-open.png",
+      "chew": "mascot-chew.png"
+    },
+    "titleIntegration": "Preserve the existing live A glyph and all per-letter hover. Do not use a raster title replacement.",
+    "targetSizing": {
+      "source": "Measure the live A slot after fonts load and remeasure on resize/layout changes.",
+      "formula": "scale = min(slotWidth * 0.90 / 985, slotHeight * 0.94 / 1046)",
+      "frame": "Scale the complete frame uniformly, account for its 16px margins and align the visible base to the glyph baseline/bottom."
+    },
+    "fixedPageCoordinates": false,
+    "expressionInvariant": "All pixels outside mouthPatch are identical across the three supplied full-body poses."
+  },
+  "latestCorrectedSheet": "Kingu_Daruma_Sprite_Sheet.png",
+  "latestSheetNote": "The latest corrected full sprite sheet supplied in chat. Existing sourceAtlas metadata describes the individual exported parts and their layout reference."
+}
