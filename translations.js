@@ -48,7 +48,7 @@ const KINGU_TRANSLATIONS = {
         // Full Menu
         menu_eyebrow: "Senarai Penuh & Telus",
         menu_title: "Menu Kingu Ramen",
-        menu_desc: "Semua {count} item hidangan berharga rasmi dari Google Listing. Terokai katalog menu lengkap, ramuan, tahap kepedasan dan harga.",
+        menu_desc: "",
         menu_tab_all: "Semua ({count})",
         menu_tab_ramen: "Ramen ({count})",
         menu_tab_snacks: "Snek & Gyoza ({count})",
@@ -281,7 +281,7 @@ const KINGU_TRANSLATIONS = {
         // Full Menu
         menu_eyebrow: "Complete & Transparent",
         menu_title: "Kingu Ramen Menu",
-        menu_desc: "All {count} official dishes with transparent pricing from our Google Listing. Explore our complete catalog, ingredients, spice levels and prices.",
+        menu_desc: "",
         menu_tab_all: "All ({count})",
         menu_tab_ramen: "Ramen ({count})",
         menu_tab_snacks: "Snacks & Gyoza ({count})",

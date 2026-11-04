@@ -421,7 +421,7 @@ class KinguApp {
         });
 
         const desc = document.querySelector('[data-i18n="menu_desc"]');
-        if (desc && dict.menu_desc) desc.innerText = dict.menu_desc.replace('{count}', counts.all);
+        if (desc) desc.remove();
     }
 
     /* Scroll Reading Progress Bar */
