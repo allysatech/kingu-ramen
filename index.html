@@ -216,7 +216,7 @@
 
             <div class="signature-grid">
                 <!-- 1. Yummy Truffle Ramen -->
-                <div class="ramen-card is-clickable" role="button" tabindex="0" onclick="window.kinguApp.openDishModal('yummy_truffle')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('yummy_truffle');}">
+                <div class="ramen-card">
                     <div class="ramen-img-wrap">
                         <img src="assets/images/kingu_shoyu_truffle_real.jpg" alt="Yummy Truffle Ramen" class="ramen-img">
                         <span class="ramen-tag-floating" data-i18n="bestseller_1_tag">Best Seller #1</span>
@@ -240,7 +240,7 @@
                 </div>
 
                 <!-- 2. Yuzu Lover Ramen -->
-                <div class="ramen-card is-clickable" role="button" tabindex="0" onclick="window.kinguApp.openDishModal('yuzu_lover')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('yuzu_lover');}">
+                <div class="ramen-card">
                     <div class="ramen-img-wrap">
                         <img src="assets/images/kingu_yuzu_lover_real.jpg" alt="Yuzu Lover Ramen" class="ramen-img">
                         <span class="ramen-tag-floating" data-i18n="bestseller_2_tag">Citrus Refreshing</span>
@@ -264,7 +264,7 @@
                 </div>
 
                 <!-- 3. Mala Beef Ramen -->
-                <div class="ramen-card is-clickable" role="button" tabindex="0" onclick="window.kinguApp.openDishModal('mala_beef')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('mala_beef');}">
+                <div class="ramen-card">
                     <div class="ramen-img-wrap">
                         <img src="assets/images/mala_beef_ramen.jpg?v=real-mala-beef" alt="Mala Beef Ramen" class="ramen-img">
                         <span class="ramen-tag-floating" data-i18n="bestseller_3_tag">Fiery Szechuan</span>
@@ -744,33 +744,6 @@
     </div>
 
     <!-- ==========================================================================
-       DISH QUICK VIEW MODAL
-       ========================================================================== -->
-    <div class="dish-modal-overlay" id="dish-modal-overlay">
-        <div class="dish-modal-box">
-            <button class="modal-close-btn" id="dish-modal-close">✕</button>
-            <div class="modal-img-pane">
-                <img id="modal-dish-img" src="assets/images/kingu_shoyu_truffle_real.jpg" alt="Dish Preview">
-            </div>
-            <div class="modal-content-pane">
-                <div>
-                    <span id="modal-dish-jp" style="font-family: var(--font-jp); color: var(--accent-gold); font-size: 0.95rem; font-weight: 600;"></span>
-                    <h3 id="modal-dish-title" style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin-top: 4px;"></h3>
-                    <div id="modal-dish-price" style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--accent-gold-light); margin-top: 6px;"></div>
-                </div>
-                <p id="modal-dish-desc" style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;"></p>
-                <div>
-                    <h5 style="color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;" data-i18n="dish_modal_ingredients">Bahan Utama & Alergen:</h5>
-                    <div id="modal-dish-ingredients" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
-                </div>
-                <button class="btn-secondary" style="width: 100%; justify-content: center; margin-top: 14px;" onclick="window.kinguApp.closeDishModal()">
-                    <span data-i18n="dish_modal_close">Tutup Perincian</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
     <footer class="site-footer" id="footer-section">
@@ -893,8 +866,8 @@
 
     <!-- Scripts -->
     <script src="assets/vendor/gsap.min.js"></script>
-    <script src="translations.js?v=mascot-7.2"></script>
-    <script src="app.js?v=mascot-7.2"></script>
-    <script src="mascot-hero.js?v=mascot-7.2"></script>
+    <script src="translations.js?v=mascot-7.8"></script>
+    <script src="app.js?v=mascot-7.8"></script>
+    <script src="mascot-hero.js?v=mascot-7.8"></script>
 </body>
 </html>

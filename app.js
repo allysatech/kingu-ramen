@@ -630,11 +630,8 @@ class KinguApp {
                 ? catLabels[this.currentLang][item.category].toUpperCase()
                 : item.category.toUpperCase();
 
-            // Whole card opens the dish details modal (no separate "View details" button)
             return `
-            <div class="menu-item-row-card is-clickable" role="button" tabindex="0"
-                 onclick="window.kinguApp.openDishModal('${item.id}')"
-                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.kinguApp.openDishModal('${item.id}');}">
+            <div class="menu-item-row-card">
                 <div>
                     <div class="item-top-row">
                         <h4 class="item-name">${item.name}</h4>
@@ -898,44 +895,13 @@ Sila sahkan ketersediaan meja kami. Terima kasih!`;
         }
     }
 
-    /* Dish Quick View Modal */
-    openDishModal(id) {
-        const item = MENU_DATA.find(i => i.id === id);
-        if (!item) return;
-
-        const isEn = this.currentLang === 'en';
-        const enItem = (window.MENU_EN_DATA && window.MENU_EN_DATA[id]) || {};
-
-        const overlay = document.getElementById('dish-modal-overlay');
-        const img = document.getElementById('modal-dish-img');
-        const title = document.getElementById('modal-dish-title');
-        const jpTitle = document.getElementById('modal-dish-jp');
-        const price = document.getElementById('modal-dish-price');
-        const desc = document.getElementById('modal-dish-desc');
-        const ingList = document.getElementById('modal-dish-ingredients');
-
-        if (!overlay) return;
-
-        if (img) img.src = item.img || 'assets/images/kingu_shoyu_truffle_real.jpg';
-        if (title) title.innerText = item.name;
-        if (jpTitle) jpTitle.innerText = item.jpName || '';
-        if (price) price.innerText = `RM ${item.price.toFixed(2)}`;
-        if (desc) desc.innerText = (isEn && (enItem.desc || enItem.desc_en)) ? (enItem.desc || enItem.desc_en) : item.desc;
-
-        if (ingList) {
-            const defaultIngs = isEn ? ['Fresh Halal-Grade Ingredients'] : ['Bahan-bahan segar gred Halal'];
-            const ings = (isEn && (enItem.ingredients || enItem.ingredients_en)) ? (enItem.ingredients || enItem.ingredients_en) : (item.ingredients || defaultIngs);
-            ingList.innerHTML = ings.map(ing => `<span class="ing-pill">${ing}</span>`).join('');
-        }
-
-        overlay.classList.add('open');
-        if (window.kinguSound) window.kinguSound.playClick();
+    /* Dish Quick View Modal (Disabled) */
+    openDishModal() {
+        return;
     }
 
     closeDishModal() {
-        const overlay = document.getElementById('dish-modal-overlay');
-        if (overlay) overlay.classList.remove('open');
-        if (window.kinguSound) window.kinguSound.playClick();
+        return;
     }
 
     /* FAQ Handler */
