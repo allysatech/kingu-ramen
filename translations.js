@@ -36,7 +36,7 @@ const KINGU_TRANSLATIONS = {
         // Best Seller
         bestseller_eyebrow: "Pilihan Utama Pelanggan",
         bestseller_title: "Best Seller Ramen",
-        bestseller_desc: "Sama ada anda gemarkan aroma truffle mewah, kesegaran buah sitrus yuzu, kemanisan sup ketam atau kepedasan mala yang membara — setiap mangkuk disediakan dengan teliti dan penuh rasa.",
+        bestseller_desc: "",
         bestseller_1_desc: "Bestseller nombor satu kegemaran ramai. Gabungan mewah hirisan itik lembut, black truffle wangi, cendawan shiitake, dan onsen tamago berkilau.",
         bestseller_2_desc: "Sensasi sitrus yuzu yang terang dan menyegarkan! Kuah ayam jernih berperisa dipadankan dengan hirisan buah yuzu, isi ayam empuk dan telur ramen.",
         bestseller_3_desc: "Untuk penggemar pedas sejati! Daging lembu braised yang kaya rasa dalam sup lada mala Szechuan berapi dengan bijan panggang dan sayur segar.",
@@ -269,7 +269,7 @@ const KINGU_TRANSLATIONS = {
         // Best Seller
         bestseller_eyebrow: "Customer Favourites",
         bestseller_title: "Best Seller Ramen",
-        bestseller_desc: "Whether you crave rich artisanal truffle aroma, refreshing yuzu citrus, savory crab sweetness or fiery mala heat — every bowl is crafted with passion and precision.",
+        bestseller_desc: "",
         bestseller_1_desc: "Number one crowd-favourite bestseller! Luxurious combination of tender duck slices, fragrant black truffle, shiitake mushrooms, and glistening onsen egg.",
         bestseller_2_desc: "Bright and zesty yuzu citrus sensation! Flavorful clear chicken broth paired with fresh yuzu slices, tender chicken and ramen egg.",
         bestseller_3_desc: "For true spice enthusiasts! Rich slow-braised beef in fiery Szechuan mala broth with toasted sesame and fresh greens.",
