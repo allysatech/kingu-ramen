@@ -340,6 +340,20 @@ class KinguApp {
         this.setLanguage(this.currentLang);
         this.updateLiveCrowdStatus();
         this.initBackgroundVideo();
+        this.initHeroWordmark();
+    }
+
+    /* 8-second Hero Wordmark Intro Dance -> Idle + Hover */
+    initHeroWordmark() {
+        const wordmark = document.querySelector('.hero-wordmark');
+        if (!wordmark) return;
+        const settleTimer = setTimeout(() => {
+            wordmark.classList.add('is-idle');
+        }, 8450);
+        wordmark.addEventListener('mouseenter', () => {
+            clearTimeout(settleTimer);
+            wordmark.classList.add('is-idle');
+        }, { once: true });
     }
 
     /* Background Video Auto-playback */

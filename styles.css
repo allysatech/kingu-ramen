@@ -4603,7 +4603,7 @@ body {
 .wm-l {
     display: inline-block;
     transform-origin: 50% 85%;
-    animation: wmPop 0.9s var(--ease-out-expo) backwards;
+    animation: wmPop 8s ease-in-out backwards;
     transition: transform 0.35s var(--ease-out-expo);
 }
 
@@ -4623,7 +4623,12 @@ body {
     transform: translateY(var(--y, 0)) rotate(var(--r, 0deg));
 }
 
+.hero-wordmark.is-idle .wm-l {
+    animation: none;
+}
+
 .hero-wordmark:hover .wm-l {
+    animation: none;
     transform: translateY(calc(var(--y, 0) * -1.6)) rotate(calc(var(--r, 0deg) * -1.4));
 }
 
@@ -4639,7 +4644,14 @@ body {
 
 @keyframes wmPop {
     0%   { opacity: 0; transform: translateY(0.5em) rotate(0deg) scale(0.6); }
-    60%  { opacity: 1; transform: translateY(calc(var(--y, 0) - 0.08em)) rotate(var(--r, 0deg)) scale(1.06); }
+    8%   { opacity: 1; transform: translateY(calc(var(--y, 0) - 0.06em)) rotate(var(--r, 0deg)) scale(1.05); }
+    18%  { opacity: 1; transform: translateY(calc(var(--y, 0) * -1.6)) rotate(calc(var(--r, 0deg) * -1.4)) scale(1.03); }
+    30%  { opacity: 1; transform: translateY(var(--y, 0)) rotate(var(--r, 0deg)) scale(1); }
+    42%  { opacity: 1; transform: translateY(calc(var(--y, 0) * -1.6)) rotate(calc(var(--r, 0deg) * -1.4)) scale(1.03); }
+    55%  { opacity: 1; transform: translateY(var(--y, 0)) rotate(var(--r, 0deg)) scale(1); }
+    68%  { opacity: 1; transform: translateY(calc(var(--y, 0) * -1.6)) rotate(calc(var(--r, 0deg) * -1.4)) scale(1.02); }
+    80%  { opacity: 1; transform: translateY(var(--y, 0)) rotate(var(--r, 0deg)) scale(1); }
+    90%  { opacity: 1; transform: translateY(calc(var(--y, 0) * -1.25)) rotate(calc(var(--r, 0deg) * -1.15)) scale(1.01); }
     100% { opacity: 1; transform: translateY(var(--y, 0)) rotate(var(--r, 0deg)) scale(1); }
 }
 
