@@ -370,18 +370,21 @@ body {
 }
 
 .story-round-logo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3.5px solid var(--accent-gold);
-    box-shadow: 0 0 35px rgba(245, 166, 35, 0.4), 0 12px 30px rgba(0, 0, 0, 0.7);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: clamp(92px, 10vw, 126px);
+    height: auto;
+    border-radius: 0;
+    object-fit: contain;
+    border: none;
+    background: transparent;
+    box-shadow: none !important;
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 18px rgba(244, 190, 55, 0.22));
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .story-round-logo:hover {
     transform: scale(1.06) rotate(3deg);
-    box-shadow: 0 0 45px rgba(245, 166, 35, 0.65), 0 16px 36px rgba(0, 0, 0, 0.8);
+    box-shadow: none !important;
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 26px rgba(245, 166, 35, 0.48));
 }
 
 .story-logo-caption {
@@ -2582,9 +2585,15 @@ body {
     height: auto;
     border-radius: 0;
     border: none;
-    box-shadow: none;
+    background: transparent;
+    box-shadow: none !important;
     object-fit: contain;
     filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 18px rgba(244, 190, 55, 0.22));
+}
+
+.story-round-logo:hover {
+    box-shadow: none !important;
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 26px rgba(245, 166, 35, 0.48));
 }
 
 /* ==========================================================================
