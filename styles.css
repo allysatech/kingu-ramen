@@ -2502,7 +2502,10 @@ body {
 
 .halal-brand-wrapper {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
     gap: clamp(16px, 2.4vw, 32px);
     align-items: stretch;
     max-height: clamp(370px, 66vh, 510px);
@@ -3547,7 +3550,6 @@ body {
         max-height: clamp(300px, 52vh, 410px);
     }
     .vip-pass-card-container,
-    .halal-brand-wrapper,
     .location-card-grid {
         grid-template-columns: 1fr 1fr !important;
         gap: 16px;
