@@ -1480,7 +1480,7 @@ body {
 .ramen-img-wrap {
     position: relative;
     width: 100%;
-    height: clamp(105px, 17vh, 165px);
+    height: clamp(190px, 34vh, 280px);
     overflow: hidden;
     background: radial-gradient(circle at 50% 40%, #2e1510, #0c0807);
     flex-shrink: 0;
@@ -1532,12 +1532,18 @@ body {
 }
 
 .ramen-card-body {
-    padding: clamp(10px, 1.6vh, 18px);
+    padding: clamp(12px, 1.8vh, 20px);
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     min-height: 0;
+}
+
+.ramen-card-body .ramen-title {
+    margin: 0;
 }
 
 .ramen-header-info {
@@ -3485,7 +3491,7 @@ body {
         max-height: clamp(290px, 52vh, 410px);
     }
     .ramen-img-wrap {
-        height: clamp(90px, 14vh, 135px);
+        height: clamp(170px, 30vh, 240px);
     }
     .gallery-mosaic {
         height: clamp(190px, 40vh, 300px);
