@@ -334,6 +334,49 @@ body {
     flex-shrink: 0;
 }
 
+/* Full Horizontal Lockup Logo */
+.brand-logo-full {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+    transition: transform 0.35s var(--ease-out-expo), filter 0.35s ease;
+}
+
+.brand-logo:hover .brand-logo-full {
+    transform: scale(1.03);
+    filter: drop-shadow(0 4px 16px rgba(245, 166, 35, 0.35));
+}
+
+.footer-logo-full {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+}
+
+.ticket-logo-full {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .brand-logo-full {
+        height: 30px;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand-logo-full {
+        height: 26px;
+    }
+}
+
 /* Round Mascot Logo (Official Community-voted Mascot) */
 .brand-logo-img {
     width: 42px;
