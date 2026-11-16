@@ -716,8 +716,8 @@ class KinguApp {
         const name = document.getElementById('vip-ticket-name-display')?.innerText || 'Kong-panion Member';
         const isEn = this.currentLang === 'en';
         const msg = isEn
-            ? `Hello Kingu Ramen! I am a VIP Kong-panion!\nName: ${name}\nVIP Pass Code: ${serial}\nI would like to claim the 3 Free Crispy Gyozas promotion with my ramen order at The Campus Ampang (Lot G-07)!`
-            : `Salam Kingu Ramen! Saya ialah Kong-panion VIP!\nNama: ${name}\nKod Pas VIP: ${serial}\nSaya ingin menuntut promosi 3 Ketul Gyoza Percuma semasa berkunjung ke outlet The Campus Ampang (Lot G-07)!`;
+            ? `Hello Kingu Ramen! I am a VIP Kong-panion!\nName: ${name}\nVIP Pass Code: ${serial}\nVisiting The Campus Ampang (Lot G-07)!`
+            : `Salam Kingu Ramen! Saya ialah Kong-panion VIP!\nNama: ${name}\nKod Pas VIP: ${serial}\nBerkunjung ke outlet The Campus Ampang (Lot G-07)!`;
         window.open(`https://wa.me/60182875277?text=${encodeURIComponent(msg)}`, '_blank');
         if (window.kinguSound) window.kinguSound.playClick();
     }
@@ -725,8 +725,8 @@ class KinguApp {
     claimVipOnWhatsApp(name, passCode) {
         const isEn = this.currentLang === 'en';
         const msg = isEn
-            ? `Hello Kingu Ramen! I am a VIP Kong-panion!\nName: ${name}\nPass Code: ${passCode}\nI would like to claim my Free Gyoza promotion at The Campus Ampang!`
-            : `Salam Kingu Ramen! Saya ialah Kong-panion VIP!\nNama: ${name}\nKod Pas: ${passCode}\nSaya ingin menuntut promosi Gyoza Percuma semasa berkunjung ke outlet The Campus Ampang!`;
+            ? `Hello Kingu Ramen! I am a VIP Kong-panion!\nName: ${name}\nPass Code: ${passCode}\nVisiting The Campus Ampang!`
+            : `Salam Kingu Ramen! Saya ialah Kong-panion VIP!\nNama: ${name}\nKod Pas: ${passCode}\nBerkunjung ke outlet The Campus Ampang!`;
         window.open(`https://wa.me/60182875277?text=${encodeURIComponent(msg)}`, '_blank');
     }
 

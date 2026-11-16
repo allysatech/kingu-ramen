@@ -61,7 +61,7 @@ const KINGU_TRANSLATIONS = {
         // VIP Pass
         vip_ribbon: "Eksklusif Komuniti Kingu Kongu",
         vip_title: "Dapatkan Pas VIP “Kong-panions”",
-        vip_desc: "Sebagai penghargaan kepada komuniti “Kong-panions” yang menamakan Kingu Ramen, daftarkan nama anda untuk menuntut 3 Ketul Gyoza Rangup Percuma bersama pesanan ramen pertama anda di outlet The Campus Ampang.",
+        vip_desc: "Sebagai penghargaan kepada komuniti “Kong-panions” yang menamakan Kingu Ramen, daftarkan nama anda untuk mengaktifkan pas keahlian digital VIP anda di outlet The Campus Ampang.",
         vip_name_placeholder: "Nama Anda (cth: Aiman Hakimi)",
         vip_phone_placeholder: "Nombor WhatsApp (cth: 012-3456789)",
         vip_btn_generate: "Jana Pas VIP Digital Saya",
@@ -294,7 +294,7 @@ const KINGU_TRANSLATIONS = {
         // VIP Pass
         vip_ribbon: "Exclusive Kingu Kongu Community",
         vip_title: "Get Your “Kong-panions” VIP Pass",
-        vip_desc: "As a token of appreciation to the “Kong-panions” community who named Kingu Ramen, register your name to claim 3 Free Crispy Gyozas with your first ramen bowl at The Campus Ampang.",
+        vip_desc: "As a token of appreciation to the “Kong-panions” community who named Kingu Ramen, register your name to activate your digital VIP membership pass at The Campus Ampang.",
         vip_name_placeholder: "Your Name (e.g. Aiman Hakimi)",
         vip_phone_placeholder: "WhatsApp Number (e.g. 012-3456789)",
         vip_btn_generate: "Generate My Digital VIP Pass",
