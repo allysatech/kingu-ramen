@@ -64,9 +64,9 @@
     <nav class="viewport-dots-nav" id="viewport-dots-nav" aria-label="Navigasi Slaid Halaman">
         <a href="#hero" class="viewport-dot active" data-target="hero" title="Utama" data-i18n-title="dot_hero"><span class="dot-text" data-i18n="dot_hero">Utama</span></a>
         <a href="#signature" class="viewport-dot" data-target="signature" title="Best Seller" data-i18n-title="dot_signature"><span class="dot-text" data-i18n="dot_signature">Best Seller</span></a>
+        <a href="#experience" class="viewport-dot" data-target="experience" title="Outlet" data-i18n-title="dot_experience"><span class="dot-text" data-i18n="dot_experience">Outlet</span></a>
         <a href="#full-menu" class="viewport-dot" data-target="full-menu" title="Menu" data-i18n-title="dot_menu"><span class="dot-text" data-i18n="dot_menu">Menu</span></a>
         <a href="#vip-club" class="viewport-dot" data-target="vip-club" title="VIP Pas" data-i18n-title="dot_vip"><span class="dot-text" data-i18n="dot_vip">VIP Pas</span></a>
-        <a href="#experience" class="viewport-dot" data-target="experience" title="Suasana" data-i18n-title="dot_experience"><span class="dot-text" data-i18n="dot_experience">Suasana</span></a>
         <a href="#reviews" class="viewport-dot" data-target="reviews" title="Ulasan" data-i18n-title="dot_reviews"><span class="dot-text" data-i18n="dot_reviews">Ulasan</span></a>
         <a href="#faq" class="viewport-dot" data-target="faq" title="FAQ" data-i18n-title="dot_faq"><span class="dot-text" data-i18n="dot_faq">FAQ</span></a>
         <a href="#location" class="viewport-dot" data-target="location" title="Lokasi" data-i18n-title="dot_location"><span class="dot-text" data-i18n="dot_location">Lokasi</span></a>
@@ -224,6 +224,37 @@
         </div>
     </section>
 
+    <!-- ==========================================================================
+       OUTLET SECTION (THE CAMPUS AMPANG LOT G-07)
+       ========================================================================== -->
+    <section class="section-block" id="experience">
+        <!-- Background Storefront Image with Luxury Dark Overlay -->
+        <div class="experience-bg-wrap">
+            <img src="assets/images/kingu_storefront_real.jpg" class="experience-bg-img" alt="Kingu Ramen Storefront Ambient">
+            <div class="experience-bg-overlay"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-eyebrow" data-i18n="exp_eyebrow">OUTLET</span>
+                <h2 class="section-title" data-i18n="exp_title">The Campus Ampang Lot G-07</h2>
+                <p class="section-desc" data-i18n="exp_desc">
+                    Enjoy your piping-hot ramen at the open chef counter, cozy indoor dining, or unwind under the stars in the outdoor seating area at The Campus Ampang.
+                </p>
+            </div>
+
+            <div class="gallery-mosaic gallery-duo">
+                <div class="gallery-tile">
+                    <img src="assets/images/kingu_space_storefront.jpg" alt="Kaunter retro dan storefront Kingu Ramen di The Campus Ampang" loading="lazy">
+                </div>
+
+                <div class="gallery-tile">
+                    <img src="assets/images/kingu_neon_ramen.jpg" alt="Papan neon Ramen first, think later dengan semangkuk ramen dan teh buah" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ==========================================================================
        FULL MENU SECTION
@@ -298,45 +329,6 @@
                         <button class="btn-action-sm" id="btn-share-vip" onclick="window.kinguApp.shareVipWhatsApp()">
                             <span data-i18n="vip_btn_share">Kongsi ke WhatsApp</span>
                         </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       THE CAMPUS AMPANG EXPERIENCE & GALLERY
-       ========================================================================== -->
-    <section class="section-block" id="experience">
-        <!-- Background Storefront Image with Luxury Dark Overlay -->
-        <div class="experience-bg-wrap">
-            <img src="assets/images/kingu_storefront_real.jpg" class="experience-bg-img" alt="Kingu Ramen Storefront Ambient">
-            <div class="experience-bg-overlay"></div>
-        </div>
-
-        <div class="container">
-            <div class="section-header-center">
-                <span class="section-eyebrow" data-i18n="exp_eyebrow">Ruang & Pengalaman</span>
-                <h2 class="section-title" data-i18n="exp_title">Suasana Izakaya Ampang</h2>
-                <p class="section-desc" data-i18n="exp_desc">
-                    Nikmati mangkuk ramen panas anda di kaunter terbuka bersama chef, ruang makan selesa dalaman atau bersantai di bawah bintang di ruang legar luar The Campus Ampang.
-                </p>
-            </div>
-
-            <div class="gallery-mosaic gallery-duo">
-                <div class="gallery-tile">
-                    <img src="assets/images/kingu_space_storefront.jpg" alt="Kaunter retro dan storefront Kingu Ramen di The Campus Ampang" loading="lazy">
-                    <div class="gallery-overlay-badge">
-                        <h4 data-i18n="gallery_4_title">Kaunter Retro &amp; Storefront Kingu</h4>
-                        <p data-i18n="gallery_4_desc">Lot G-07, Ground Floor, The Campus Ampang</p>
-                    </div>
-                </div>
-
-                <div class="gallery-tile">
-                    <img src="assets/images/kingu_neon_ramen.jpg" alt="Papan neon Ramen first, think later dengan semangkuk ramen dan teh buah" loading="lazy">
-                    <div class="gallery-overlay-badge">
-                        <h4 data-i18n="gallery_5_title">Ramen First, Think Later.</h4>
-                        <p data-i18n="gallery_5_desc">Ramen panas &amp; teh buah segar di bawah neon kami</p>
                     </div>
                 </div>
             </div>
@@ -735,8 +727,8 @@
 
     <!-- Scripts -->
     <script src="assets/vendor/gsap.min.js"></script>
-    <script src="translations.js?v=mascot-8.8"></script>
-    <script src="app.js?v=mascot-8.8"></script>
-    <script src="mascot-hero.js?v=mascot-8.8"></script>
+    <script src="translations.js?v=mascot-8.9"></script>
+    <script src="app.js?v=mascot-8.9"></script>
+    <script src="mascot-hero.js?v=mascot-8.9"></script>
 </body>
 </html>

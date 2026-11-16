@@ -92,8 +92,8 @@ const KINGU_TRANSLATIONS = {
         story_logo_caption: "Maskot Rasmi Kingu Ramen",
 
         // Experience & Gallery
-        exp_eyebrow: "Ruang & Pengalaman",
-        exp_title: "Suasana Izakaya Ampang",
+        exp_eyebrow: "OUTLET",
+        exp_title: "The Campus Ampang Lot G-07",
         exp_desc: "Nikmati mangkuk ramen panas anda di kaunter terbuka bersama chef, ruang makan selesa dalaman atau bersantai di bawah bintang di ruang legar luar The Campus Ampang.",
         gallery_4_title: "Kaunter Retro & Storefront Kingu",
         gallery_4_desc: "Lot G-07, Ground Floor, The Campus Ampang",
@@ -325,8 +325,8 @@ const KINGU_TRANSLATIONS = {
         story_logo_caption: "Official Kingu Ramen Mascot",
 
         // Experience & Gallery
-        exp_eyebrow: "Spaces & Experience",
-        exp_title: "Ampang Izakaya Ambiance",
+        exp_eyebrow: "OUTLET",
+        exp_title: "The Campus Ampang Lot G-07",
         exp_desc: "Enjoy your piping-hot ramen at the open chef counter, cozy indoor dining, or unwind under the stars in the outdoor seating area at The Campus Ampang.",
         gallery_4_title: "Retro Counter & Kingu Storefront",
         gallery_4_desc: "Lot G-07, Ground Floor, The Campus Ampang",
