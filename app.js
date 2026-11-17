@@ -638,8 +638,6 @@ class KinguApp {
         };
 
         container.innerHTML = filtered.map(item => {
-            const enItem = enData[item.id] || {};
-            const desc = (isEn && (enItem.desc || enItem.desc_en)) ? (enItem.desc || enItem.desc_en) : item.desc;
             const categoryLabel = (catLabels[this.currentLang] && catLabels[this.currentLang][item.category])
                 ? catLabels[this.currentLang][item.category].toUpperCase()
                 : item.category.toUpperCase();
@@ -647,16 +645,13 @@ class KinguApp {
             return `
             <div class="menu-item-row-card">
                 <div>
-                    <div class="item-top-row">
+                    <div class="item-top-row" style="margin-bottom: 6px;">
                         <h4 class="item-name">${item.name}</h4>
-                        <span class="item-price">RM ${item.price.toFixed(2)}</span>
                     </div>
-                    <div class="item-category-label">
-                        ${item.jpName ? `<span style="font-family: var(--font-jp); color: var(--accent-gold); margin-right: 8px;">${item.jpName}</span>` : ''}
+                    <div class="item-category-label" style="margin-bottom: 0;">
                         <span>${categoryLabel}</span>
                         ${item.spiceLevel ? ` • ${spicyLabel} ${item.spiceLevel}/3` : ''}
                     </div>
-                    <p class="item-desc-text">${desc}</p>
                 </div>
             </div>
             `;
@@ -1075,7 +1070,8 @@ Sila sahkan ketersediaan meja kami. Terima kasih!`;
 
                 navLinks.forEach(link => {
                     const href = link.getAttribute('href') || '';
-                    link.classList.toggle('active', href.includes(currentActiveId));
+                    const isMenuPage = currentActiveId === 'full-menu' && href.includes('menu');
+                    link.classList.toggle('active', isMenuPage || (href.startsWith('#') && href.includes(currentActiveId)));
                 });
             }
             ticking = false;

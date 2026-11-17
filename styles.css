@@ -5977,4 +5977,35 @@ html {
     }
 }
 
+/* ==========================================================================
+   STANDALONE MENU PAGE (menu.html)
+   ========================================================================== */
+html.menu-standalone-page {
+    scroll-snap-type: none !important;
+}
+
+.section-block.menu-page-section {
+    height: auto !important;
+    max-height: none !important;
+    min-height: calc(100vh - 180px) !important;
+    padding-top: clamp(110px, 14vh, 145px) !important;
+    padding-bottom: clamp(56px, 8vh, 88px) !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+}
+
+.section-block.menu-page-section > .container {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.section-block.menu-page-section .menu-items-grid {
+    flex: none !important;
+    overflow: visible !important;
+    max-height: none !important;
+    margin-top: 8px;
+}
+
+
 

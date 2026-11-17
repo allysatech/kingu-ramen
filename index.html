@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css?v=mascot-8.7">
+    <link rel="stylesheet" href="styles.css?v=mascot-9.0">
 
 </head>
 <body>
@@ -65,7 +65,6 @@
         <a href="#hero" class="viewport-dot active" data-target="hero" title="Utama" data-i18n-title="dot_hero"><span class="dot-text" data-i18n="dot_hero">Utama</span></a>
         <a href="#signature" class="viewport-dot" data-target="signature" title="Best Seller" data-i18n-title="dot_signature"><span class="dot-text" data-i18n="dot_signature">Best Seller</span></a>
         <a href="#experience" class="viewport-dot" data-target="experience" title="Outlet" data-i18n-title="dot_experience"><span class="dot-text" data-i18n="dot_experience">Outlet</span></a>
-        <a href="#full-menu" class="viewport-dot" data-target="full-menu" title="Menu" data-i18n-title="dot_menu"><span class="dot-text" data-i18n="dot_menu">Menu</span></a>
         <a href="#vip-club" class="viewport-dot" data-target="vip-club" title="VIP Pas" data-i18n-title="dot_vip"><span class="dot-text" data-i18n="dot_vip">VIP Pas</span></a>
         <a href="#reviews" class="viewport-dot" data-target="reviews" title="Ulasan" data-i18n-title="dot_reviews"><span class="dot-text" data-i18n="dot_reviews">Ulasan</span></a>
         <a href="#faq" class="viewport-dot" data-target="faq" title="FAQ" data-i18n-title="dot_faq"><span class="dot-text" data-i18n="dot_faq">FAQ</span></a>
@@ -98,7 +97,7 @@
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#signature" class="nav-link" data-i18n="nav_bestseller">Best Seller</a></li>
-                <li><a href="#full-menu" class="nav-link" data-i18n="nav_menu">Menu</a></li>
+                <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Menu</a></li>
                 <li><a href="#vip-club" class="nav-link" data-i18n="nav_vip">VIP</a></li>
                 <li><a href="#location" class="nav-link" data-i18n="nav_contact">Hubungi Kami</a></li>
                 <!-- Table Reservation (opens modal) -->
@@ -149,7 +148,7 @@
                 </p>
 
                 <div class="hero-cta-group">
-                    <a href="#full-menu" class="btn-primary" id="hero-view-menu-btn">
+                    <a href="menu.html" class="btn-primary" id="hero-view-menu-btn">
                         <span data-i18n="hero_cta_menu">View The Menu</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -251,38 +250,6 @@
                 <div class="gallery-tile">
                     <img src="assets/images/kingu_neon_ramen.jpg" alt="Papan neon Ramen first, think later dengan semangkuk ramen dan teh buah" loading="lazy">
                 </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ==========================================================================
-       FULL MENU SECTION
-       ========================================================================== -->
-    <section class="section-block" id="full-menu">
-        <div class="container">
-            <div class="section-header-center">
-                <span class="section-eyebrow" data-i18n="menu_eyebrow">Senarai Penuh & Telus</span>
-                <h2 class="section-title" data-i18n="menu_title">Menu Kingu Ramen</h2>
-            </div>
-
-            <div class="menu-controls">
-                <div class="menu-category-tabs">
-                    <button class="menu-tab active" data-category="all" data-i18n="menu_tab_all">Semua (26)</button>
-                    <button class="menu-tab" data-category="ramen" data-i18n="menu_tab_ramen">Ramen (7)</button>
-                    <button class="menu-tab" data-category="snacks" data-i18n="menu_tab_snacks">Snek & Gyoza (10)</button>
-                    <button class="menu-tab" data-category="rice" data-i18n="menu_tab_rice">Hidangan Nasi (2)</button>
-                    <button class="menu-tab" data-category="drinks" data-i18n="menu_tab_drinks">Teh Buah & Minuman (7)</button>
-                </div>
-
-                <div class="menu-search-box">
-                    <svg class="search-icon-pos" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                    <input type="text" id="menu-search-input" class="menu-search-input" placeholder="Cari hidangan (cth: Gyoza, Yuzu, Truffle)..." data-i18n-placeholder="menu_search_placeholder">
-                </div>
-            </div>
-
-            <div class="menu-items-grid" id="menu-grid">
-                <!-- Dynamically rendered by app.js -->
             </div>
         </div>
     </section>
@@ -612,7 +579,7 @@
                     <h4 class="footer-col-title" data-i18n="footer_quick_links">Pautan Pantas</h4>
                     <ul class="footer-link-list">
                         <li><a href="#signature" data-i18n="nav_bestseller">Best Seller</a></li>
-                        <li><a href="#full-menu" data-i18n="nav_menu">Menu</a></li>
+                        <li><a href="menu.html" data-i18n="nav_menu">Menu</a></li>
                         <li><a href="#vip-club" data-i18n="nav_vip">VIP</a></li>
                         <li><a href="#location" data-i18n="nav_contact">Hubungi Kami</a></li>
                     </ul>
@@ -710,8 +677,8 @@
 
     <!-- Scripts -->
     <script src="assets/vendor/gsap.min.js"></script>
-    <script src="translations.js?v=mascot-8.9"></script>
-    <script src="app.js?v=mascot-8.9"></script>
-    <script src="mascot-hero.js?v=mascot-8.9"></script>
+    <script src="translations.js?v=mascot-9.0"></script>
+    <script src="app.js?v=mascot-9.0"></script>
+    <script src="mascot-hero.js?v=mascot-9.0"></script>
 </body>
 </html>
