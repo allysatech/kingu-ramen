@@ -6,7 +6,7 @@ const KINGU_TRANSLATIONS = {
         // Navigation
         nav_bestseller: "Best Seller",
         nav_menu: "Menu",
-        nav_vip: "VIP",
+        nav_vip: "Be a Kong-panions",
         nav_contact: "Hubungi Kami",
         nav_reserve: "Tempah Meja",
 
@@ -239,7 +239,7 @@ const KINGU_TRANSLATIONS = {
         // Navigation
         nav_bestseller: "Best Seller",
         nav_menu: "Menu",
-        nav_vip: "VIP",
+        nav_vip: "Be a Kong-panions",
         nav_contact: "Contact Us",
         nav_reserve: "Book a Table",
 
